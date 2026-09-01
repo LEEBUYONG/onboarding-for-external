@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>외부 강사·기술튜터 온보딩 | 팀스파르타 AX교육팀</title>
+<meta name="description" content="커리어데이·강사법인을 통해 합류했거나 특강으로 투입된 외부 강사·기술튜터를 위한 온보딩 안내. 역할, 현장 수칙, 정산·경비, 문의 방법.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@500;700;800&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+KR:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#EFF1EE;
+  --surface:#FFFFFF;
+  --surface-2:#F5F7F4;
+  --ink:#14181A;
+  --ink-2:#39423E;
+  --muted:#69736D;
+  --line:#D4D9D4;
+  --line-soft:#E4E8E3;
+  --accent:#17594A;
+  --accent-soft:#DFEBE6;
+  --on-accent:#FFFFFF;
+  --signal:#8F4A11;
+  --signal-soft:#F7EBDF;
+  --alert:#8A3626;
+  --alert-soft:#F8E7E3;
+  --shadow:0 1px 2px rgba(20,30,26,.05), 0 10px 30px rgba(20,30,26,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#101413;
+    --surface:#191F1D;
+    --surface-2:#202724;
+    --ink:#E7EBE8;
+    --ink-2:#C0C8C3;
+    --muted:#8A958F;
+    --line:#2C3431;
+    --line-soft:#242B28;
+    --accent:#6DBBA4;
+    --accent-soft:#15302A;
+    --on-accent:#0C1211;
+    --signal:#DFA463;
+    --signal-soft:#31261A;
+    --alert:#E08B7A;
+    --alert-soft:#33201C;
+    --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#101413; --surface:#191F1D; --surface-2:#202724;
+  --ink:#E7EBE8; --ink-2:#C0C8C3; --muted:#8A958F;
+  --line:#2C3431; --line-soft:#242B28;
+  --accent:#6DBBA4; --accent-soft:#15302A; --on-accent:#0C1211;
+  --signal:#DFA463; --signal-soft:#31261A;
+  --alert:#E08B7A; --alert-soft:#33201C;
+  --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:"IBM Plex Sans KR","Apple SD Gothic Neo",system-ui,sans-serif;
+  font-size:16.5px;line-height:1.7;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:"Gothic A1","Apple SD Gothic Neo",system-ui,sans-serif;margin:0;text-wrap:balance}
+.mono{font-family:"IBM Plex Mono",ui-monospace,monospace;font-variant-numeric:tabular-nums}
+p{margin:0 0 12px}
+a{color:var(--accent);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--accent) 35%,transparent)}
+a:hover{border-bottom-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+.wrap{max-width:920px;margin:0 auto;padding:0 22px}
+/* ---------- hero ---------- */
+.hero{padding:72px 0 40px;border-bottom:1px solid var(--line)}
+.brandline{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.18em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:18px
+}
+.hero h1{font-size:clamp(30px,5vw,50px);font-weight:800;letter-spacing:-.025em;line-height:1.22;text-wrap:initial}
+.hero .lede{font-size:18px;color:var(--ink-2);max-width:60ch;margin-top:18px}
+.callout{
+  display:flex;gap:14px;align-items:flex-start;
+  background:var(--signal-soft);border-left:3px solid var(--signal);
+  padding:16px 18px;border-radius:0 8px 8px 0;margin:28px 0 0
+}
+.callout .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--signal);font-weight:600;flex:0 0 auto;padding-top:3px}
+.callout ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:5px}
+.callout ul li{color:var(--ink);font-size:15px}
+/* ---------- nav ---------- */
+nav.jump{
+  position:sticky;top:0;z-index:30;background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(10px);border-bottom:1px solid var(--line);margin-bottom:8px
+}
+nav.jump .inner{display:flex;gap:2px;overflow-x:auto;padding:8px 0;max-width:920px;margin:0 auto}
+nav.jump a{
+  border:none;flex:0 0 auto;padding:6px 13px;border-radius:999px;
+  font-size:13.5px;color:var(--muted);white-space:nowrap
+}
+nav.jump a:hover{background:var(--surface);color:var(--ink)}
+nav.jump a.on{background:var(--accent);color:var(--on-accent)}
+/* ---------- sections ---------- */
+section{padding:52px 0;border-bottom:1px solid var(--line-soft);scroll-margin-top:60px}
+section:last-of-type{border-bottom:none}
+.sec-k{
+  font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--muted);margin-bottom:10px
+}
+section h2{font-size:clamp(24px,3.4vw,31px);font-weight:800;letter-spacing:-.02em}
+section > .intro{color:var(--ink-2);margin:14px 0 26px;max-width:62ch}
+.card{background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;padding:24px 26px;box-shadow:var(--shadow)}
+.card + .card{margin-top:14px}
+.card h3{font-size:18px;font-weight:700;margin-bottom:10px}
+.why{font-size:14.5px;color:var(--muted);margin:0 0 14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media (max-width:720px){.grid2{grid-template-columns:1fr}}
+ul.tick{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px}
+ul.tick li{position:relative;padding-left:24px;color:var(--ink-2)}
+ul.tick li::before{
+  content:"";position:absolute;left:4px;top:11px;width:7px;height:7px;
+  border-radius:2px;background:var(--accent);opacity:.55
+}
+ul.tick li strong{color:var(--ink);font-weight:600}
+ul.plain{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:7px;color:var(--ink-2)}
+/* ---------- role tabs ---------- */
+.roles{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.roles button{
+  padding:11px 20px;border-radius:999px;border:1px solid var(--line);
+  background:var(--surface);color:var(--ink-2);cursor:pointer;
+  font-family:"Gothic A1",sans-serif;font-size:15.5px;font-weight:700
+}
+.roles button[aria-selected="true"]{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.rolepanel[hidden]{display:none}
+.phase{border-left:2px solid var(--line);padding:0 0 0 22px;margin-left:6px;position:relative}
+.phase + .phase{margin-top:26px}
+.phase::before{
+  content:"";position:absolute;left:-6px;top:8px;width:10px;height:10px;
+  border-radius:50%;background:var(--accent);border:2px solid var(--surface)
+}
+.phase h4{
+  font-size:12px;font-family:"IBM Plex Mono",monospace;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:8px;font-weight:600
+}
+.phase h3{font-size:17px;margin:0 0 10px}
+.quote{
+  background:var(--surface-2);border-left:3px solid var(--accent);
+  padding:12px 16px;border-radius:0 8px 8px 0;margin:14px 0 0;font-size:15px;color:var(--ink)
+}
+/* ---------- field notes ---------- */
+.fnote{background:var(--surface);border:1px solid var(--line-soft);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.fnote .said{padding:18px 22px;border-bottom:1px solid var(--line-soft)}
+.fnote .said .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal);font-weight:600;margin-bottom:8px}
+.fnote .said p{margin:0;color:var(--ink-2);font-size:15.5px}
+.fnote .do{padding:16px 22px;background:var(--accent-soft)}
+.fnote .do .k{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:8px}
+.fnote .do ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;color:var(--ink)}
+/* ---------- tables ---------- */
+.scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-size:15px}
+th,td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-family:"IBM Plex Mono",monospace;font-weight:500}
+/* ---------- contact ---------- */
+.contact-card{
+  background:var(--surface);border:1px solid var(--line-soft);border-radius:14px;
+  padding:30px 32px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:16px;
+  align-items:flex-start
+}
+.contact-card p{margin:0;color:var(--ink-2);font-size:16px;max-width:56ch}
+.contact-btn{
+  display:inline-flex;align-items:center;gap:10px;
+  background:var(--accent);color:var(--on-accent);border:none;
+  padding:13px 22px;border-radius:999px;font-weight:700;font-size:15.5px;
+  font-family:"Gothic A1",sans-serif
+}
+.contact-btn:hover{opacity:.92;border-bottom:none}
+.contact-btn .tag{font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:12.5px;opacity:.85}
+footer{padding:40px 0 72px;color:var(--muted);font-size:13.5px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="brandline">팀스파르타 AX교육팀 · 외부 인원 온보딩</p>
+    <h1>현장에 나가시기 전,<br>이 페이지 하나면 됩니다</h1>
+    <p class="lede">커리어데이·강사법인을 통해 합류하셨거나 특강으로 갑자기 투입되신 분들을 위한 안내입니다. 정식 채용 온보딩 절차 대신, 현장에서 바로 필요한 내용만 정리했습니다.</p>
+    <div class="callout">
+      <span class="k">대상</span>
+      <ul>
+        <li>커리어데이에서 기술튜터·강사로 모집된 분</li>
+        <li>워카-콥스랩 등 강사법인을 통해 모집된 분</li>
+        <li>특강 등으로 외부에서 섭외되어 갑작스럽게 투입되신 분</li>
+      </ul>
+    </div>
+  </div>
+</header>
+<nav class="jump">
+  <div class="inner wrap">
+    <a href="#about">대상·안내</a>
+    <a href="#role">내 역할</a>
+    <a href="#field">현장 수칙</a>
+    <a href="#standard">협업 기준</a>
+    <a href="#support">정산·경비</a>
+    <a href="#contact">문의</a>
+  </div>
+</nav>
+<div class="wrap">
+  <!-- ============ 대상·안내 ============ -->
+  <section id="about">
+    <p class="sec-k">먼저 확인해 주세요</p>
+    <h2>일반 온보딩과 무엇이 다른가요</h2>
+    <p class="intro">소속 강사·기술튜터 온보딩과 달리, 아래 내용은 적용되지 않거나 다르게 운영됩니다. 미리 알아두시면 현장에서 헷갈릴 일이 줄어듭니다.</p>
+    <div class="card">
+      <ul class="tick">
+        <li><strong>회원가입·계약이 없습니다.</strong> 강사 등록은 담당자가 수동으로 진행합니다. 강사 포털 회원가입이나 별도 계약 절차 없이, 배정된 교육 일자 정보만 안내받으십니다.</li>
+        <li><strong>Slack은 운영 채널에만 들어갑니다.</strong> 배정된 교육의 운영 채널에 운영 안내를 받는 목적으로 초대되며, 주강사풀·기술튜터풀 채널에는 참여하지 않습니다. 포스코 교육운영·삼성전자 등 일부 고객사 교육은 해당 교육 전용 채널에만 한정해서 초대됩니다.</li>
+        <li><strong>파일럿(페어) 배정 기간이 없습니다.</strong> 신규 합류자를 대상으로 한 3회 페어 배정 절차가 적용되지 않습니다.</li>
+        <li><strong>활동 종료가 간단합니다.</strong> 배정된 교육을 마치면 별도 절차 없이 활동이 종료됩니다. 이후 다시 제안드리는 교육이 있다면 그때 다시 안내드립니다.</li>
+      </ul>
+    </div>
+  </section>
+  <!-- ============ 역할 ============ -->
+  <section id="role">
+    <p class="sec-k">현장 준비</p>
+    <h2>내 역할과 책임</h2>
+    <p class="intro">강사와 기술튜터는 상하 관계가 아니라 <strong>역할 분담</strong>입니다. 한 사람은 수업 전체의 흐름을 책임지고, 한 사람은 교육생 개개인의 실습을 책임집니다. 둘 중 하나라도 비면 만족도는 바로 떨어집니다.</p>
+    <div class="roles" role="tablist">
+      <button role="tab" aria-selected="true" aria-controls="p-tutor" id="t-tutor">기술튜터 (보조강사)</button>
+      <button role="tab" aria-selected="false" aria-controls="p-inst" id="t-inst">강사</button>
+      <button role="tab" aria-selected="false" aria-controls="p-both" id="t-both">겸임</button>
+    </div>
+    <!-- 기술튜터 -->
+    <div class="rolepanel" id="p-tutor" role="tabpanel" aria-labelledby="t-tutor">
+      <div class="card">
+        <h3>기술튜터가 하는 일</h3>
+        <p>기술튜터는 단순한 보조 역할이 아닙니다. 교육생이 끝까지 실습 흐름을 따라가고 <strong>"나도 AI를 활용할 수 있겠다"</strong>는 경험을 하도록 돕는, 만족도를 직접 좌우하는 역할입니다.</p>
+        <ul class="tick">
+          <li><strong>실습 지원</strong> — 막힌 교육생을 찾아 진행을 이어주기</li>
+          <li><strong>질문 응대</strong> — 반복되는 질문은 모아서 강사에게 전달</li>
+          <li><strong>현장 관찰</strong> — 전체 진도를 살펴 "지금 절반이 못 따라오고 있다"는 신호를 강사에게 전달</li>
+          <li><strong>환경·계정 이슈 처리</strong> — 유료 계정 초대, 업로드 오류, 마이크·스피커 문제</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="phase">
+          <h4>교육 전 (D-3 ~ D-1)</h4>
+          <h3>준비</h3>
+          <ul class="tick">
+            <li><strong>교안 검수</strong> — 운영 채널에 올라온 교안을 미리 읽고 "오늘 무엇을 하는지" 파악. 궁금한 점은 <strong>해당 게시글 스레드에 댓글</strong>로 강사에게 질문 (개인 연락 불필요)</li>
+            <li><strong>패들렛 확인</strong> — 실습 결과물이 어디에 올라가는지, 섹션 구성이 어떻게 되어 있는지</li>
+            <li>실습에 쓰이는 AI 툴을 직접 한 번 돌려보기 — 현장에서 처음 보면 지원할 수 없습니다</li>
+            <li>비대면(Zoom) 교육이라면 마이크·스피커·화면 공유 사전 점검</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <h4>교육 중</h4>
+          <h3>실습 시간이 튜터의 본 업무 시간입니다</h3>
+          <ul class="tick">
+            <li>유료 계정 세팅 및 초대 완료 확인</li>
+            <li><strong>자리에 앉아 있지 않기.</strong> 실습이 시작되면 교육장을 돌며 화면을 직접 보고 진행 상황을 확인합니다</li>
+            <li>손을 들지 않는 교육생이 가장 많이 막혀 있습니다 — 먼저 다가가 확인</li>
+            <li>같은 질문이 3번 이상 나오면 강사에게 전달해 전체 안내로 전환</li>
+            <li>현장 이슈는 Slack 운영 채널로 공유</li>
+          </ul>
+          <div class="quote">실습 시간에 개인 노트북으로 다른 작업을 하며 앉아 있는 것은, 그 시간 교육생이 방치된다는 뜻입니다. 실제 고객사 피드백으로 지적된 사례가 있습니다.</div>
+        </div>
+        <div class="phase">
+          <h4>교육 후</h4>
+          <h3>마무리</h3>
+          <ul class="tick">
+            <li>교육 현장 사진 업로드 <span class="muted">(개인 식별 정보가 드러나지 않도록 촬영)</span></li>
+            <li>특이사항 보고 — 진행에 영향을 준 일은 작더라도 공유</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 강사 -->
+    <div class="rolepanel" id="p-inst" role="tabpanel" aria-labelledby="t-inst" hidden>
+      <div class="card">
+        <h3>강사가 하는 일</h3>
+        <p>강사는 교육을 직접 설계하고 진행하는 <strong>교안 작성 주체</strong>이며, 수업 전체의 흐름과 시간을 운영합니다. 교육생이 오늘 무엇을 배웠고 내일 무엇을 할 수 있게 되었는지가 강사의 책임 범위입니다.</p>
+      </div>
+      <div class="card">
+        <div class="phase">
+          <h4>배정 직후</h4>
+          <h3>교육 준비</h3>
+          <ul class="tick">
+            <li>담당 매니저와 Slack 운영 채널 확인</li>
+            <li>교육 개요 확인 — 일정·장소·대상·목표</li>
+            <li>교육 커리큘럼 확인, 패들렛 페이지 초대 및 권한 확인</li>
+            <li>담당 매니저와 사전 소통</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <h4>교육 전</h4>
+          <h3>교안 제작</h3>
+          <ul class="tick">
+            <li>제공되는 커리큘럼을 기반으로 작성합니다 — 백지에서 시작하지 않습니다</li>
+            <li>작성 도구는 <strong>Notion</strong>. 줄글보다 섹션 구분·강조·리스트로 구조화</li>
+            <li>가능한 한 <strong>빨리 운영 채널에 공유</strong>해 주세요. 기술튜터가 사전 숙지할 시간이 필요합니다</li>
+            <li>실습 파일 준비, 교안 피드백 반영</li>
+            <li>사내망 교육이라면 사용할 생성형 AI 툴 리스트를 사전 공유 (승인 절차 필요)</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <h4>교육 당일 · 도착 시</h4>
+          <h3>환경 점검</h3>
+          <ul class="tick">
+            <li>내·외부망 분리 여부 확인 (파일 다운로드 가능 여부)</li>
+            <li>GPT·패들렛 등 외부 사이트 접속 및 파일 업로드 가능 여부</li>
+            <li>Windows/Mac 차이로 인한 업로드 오류 여부</li>
+            <li>유료 워크스페이스 초대 완료 여부</li>
+            <li><strong>담당 매니저에게 도착 메시지</strong> — 교육 인원, 도착 시간, 특이사항</li>
+            <li>기술튜터와 <strong>지원 구간 협의</strong> — 어느 실습에서 누가 어떻게 붙을지</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <h4>교육 중</h4>
+          <h3>진행</h3>
+          <ul class="tick">
+            <li>교안 URL을 화면에 고정. <strong>빠른 스크롤 지양</strong> — 한 화면에서 고정된 구간을 설명</li>
+            <li><strong>설명 → 공통 실습 → 개별 실습</strong> 흐름으로, 단계 전환을 말로 명확히 구분<br><span class="mono">"지금부터 3분 동안 설명에 집중해 주세요" / "이제 5분 동안 함께 실습하겠습니다"</span></li>
+            <li>실습은 <strong>언제까지, 어디에 올릴지</strong>를 반드시 함께 안내</li>
+            <li>지시대명사("여기", "이거") 대신 위치를 말로 설명</li>
+            <li>실습 중에는 교육장을 순회 — 가까운 자리만이 아니라 전체를 고르게</li>
+            <li>발성과 속도 점검 — 뒷자리까지 들리는지, 따라올 수 있는 속도인지</li>
+          </ul>
+        </div>
+        <div class="phase">
+          <h4>교육 후</h4>
+          <h3>마무리</h3>
+          <ul class="tick">
+            <li><strong>보안 안내(필수)</strong> — 공용 PC 계정 로그아웃, 업로드 파일·데이터 삭제</li>
+            <li>담당 매니저에게 교육 종료 메시지. 분위기·참여도·담당자 불만 등 특이사항이 있으면 <strong>전화</strong></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- 겸임 -->
+    <div class="rolepanel" id="p-both" role="tabpanel" aria-labelledby="t-both" hidden>
+      <div class="card">
+        <h3>겸임으로 활동하시는 분</h3>
+        <p>강사와 기술튜터 역할을 함께 하실 수 있습니다. 배정되는 역할에 따라 위 두 탭의 내용을 각각 확인해 주세요.</p>
+        <ul class="tick">
+          <li>강사로 배정된 교육 → <strong>강사</strong> 탭의 준비·진행 기준을 따릅니다</li>
+          <li>기술튜터로 배정된 교육 → <strong>기술튜터</strong> 탭의 기준을 따릅니다</li>
+          <li>강사 경험이 있으셔도 처음 합류하는 현장에서는 <strong>기술튜터로 먼저 참여</strong>해 보시는 것을 권장합니다 — 진행 방식과 현장 흐름을 미리 익히면 강사로 나가실 때 준비할 것이 예측 가능해집니다</li>
+        </ul>
+        <div class="quote">교육 진행 방식은 텍스트로 아무리 설명해도 현장에서 한 번 보는 것만 못합니다.</div>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 현장 수칙 ============ -->
+  <section id="field">
+    <p class="sec-k">현장에서 실제로 나온 피드백</p>
+    <h2>이것만은 꼭 지켜주세요</h2>
+    <p class="intro">아래는 실제 교육 이후 고객사와 운영진에게서 나온 피드백 중, 반복적으로 지적되었고 미리 알았다면 피할 수 있었던 항목만 추렸습니다.</p>
+    <div class="fnote">
+      <div class="said">
+        <p class="k">이런 피드백이 반복해서 있었습니다</p>
+        <p>"말씀이 빠르고 목소리가 작아 따라가기 어려웠다" · "실습 시간에 가까이 있는 교육생 위주로만 대응했다" · "개인 노트북으로 다른 작업을 하며 앉아 있는 시간이 있었다" · "마이크·화면 공유 등 사전 환경 체크가 있었으면 좋았을 것"</p>
+      </div>
+      <div class="do">
+        <p class="k">그래서 이것만은 꼭 지켜주세요</p>
+        <ul>
+          <li><strong>교육 시간 중에는 휴대폰을 보지 마세요.</strong> 특히 실습 시간에 휴대폰이나 개인 노트북으로 다른 작업을 하는 모습은 실제로 지적된 사례입니다</li>
+          <li>실습이 시작되면 자리에서 일어나 <strong>교육장 전체를 순회</strong>하세요 — 손을 들지 않는 교육생이 가장 많이 막혀 있습니다</li>
+          <li>시작 전 <strong>뒷자리까지 들리는지</strong> 한 번 확인하고, 말하는 속도는 중간중간 "따라오고 계신가요?"로 점검하세요</li>
+          <li>비대면(Zoom) 교육은 <strong>시작 10분 전</strong> 마이크·화면 공유·실습 링크 접속을 미리 점검하세요</li>
+          <li>교안·운영 안내는 올라오는 즉시 확인하고, 궁금한 점은 개인 연락 대신 <strong>운영 채널 스레드</strong>에 남겨주세요</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+  <!-- ============ 협업 기준 ============ -->
+  <section id="standard">
+    <p class="sec-k">함께 일하는 방식</p>
+    <h2>협업 기준</h2>
+    <p class="intro">교육 품질만큼 중요한 것이 함께 일하는 방식입니다. 아래는 매 현장을 안정적으로 만들기 위한 공통 약속입니다.</p>
+    <div class="card">
+      <h3>기본 활동 기준</h3>
+      <ul class="tick">
+        <li>확정된 일정과 <strong>시작 시간을 준수</strong>합니다. 교육 준비와 고객사 응대에 필요한 사전 도착 시간도 포함됩니다</li>
+        <li>참여가 어렵거나 일정 변경이 필요하면 <strong>인지한 즉시</strong> 담당 매니저에게 공유합니다</li>
+        <li>교육생·고객사·동료를 존중하는 방식으로 소통합니다</li>
+        <li>교육생 개인정보와 교육 운영 정보는 외부에 공유하지 않습니다. 현장 사진·영상을 외부에 게시하려면 사전 확인이 필요합니다</li>
+        <li>교육 품질에 영향을 줄 수 있는 이슈는 혼자 판단하지 않고 공유합니다</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>준비 과정에서의 협업</h3>
+      <p>사전 소통, 자료 준비, 운영안 확인은 형식적인 절차가 아니라 현장에서 사고를 막는 장치입니다.</p>
+      <ul class="tick">
+        <li>담당 매니저가 전달하는 필수 운영 안내는 확인하고 회신해 주세요</li>
+        <li>진행 방식에 이견이 있으실 때는 <strong>운영 채널에서 구체적으로</strong> — 무엇이 왜 어려운지, 대안은 무엇인지</li>
+        <li>메시지 톤도 협업의 일부입니다. 급할수록 사실과 요청을 분리해 적어주시면 훨씬 빠르게 처리됩니다</li>
+      </ul>
+    </div>
+  </section>
+  <!-- ============ 정산·경비 ============ -->
+  <section id="support">
+    <p class="sec-k">지원·정산·문의</p>
+    <h2>정산 · 경비 안내</h2>
+    <div class="card">
+      <h3>교육 배정</h3>
+      <p class="why">별도 공고 지원 절차 없이 담당자가 배정합니다.</p>
+      <ul class="tick">
+        <li>담당 매니저가 안내하는 일자에 맞춰 현장에 참여해 주시면 됩니다 — 포털에 지원하시거나 댓글을 남기실 필요가 없습니다</li>
+        <li>참여가 어렵거나 일정 변경이 필요하면 인지한 즉시 담당 매니저에게 알려주세요</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>정산</h3>
+      <p class="why">합류 경로에 따라 정산이 진행되는 방식이 다릅니다.</p>
+      <ul class="tick">
+        <li><strong>커리어데이를 통해 합류하신 경우</strong> — AX교육팀이 <strong>월 1회</strong> 커리어데이 담당자와 소통하여, 해당 월에 어떤 인원이 어떤 교육에 참여했는지 정리해 전달합니다. 정산은 이 내용을 기준으로 <strong>한 달 단위</strong>로 진행되며, 개인이 별도로 정산을 청구하실 필요는 없습니다</li>
+        <li><strong>강사법인(워카-콥스랩 등)을 통해 합류하신 경우</strong> — 정산 관련 문의는 <strong>소속 법인의 담당자</strong>를 통해 요청해 주세요. AX교육팀은 법인 담당자와 소통하여 처리합니다</li>
+      </ul>
+      <div class="quote">정산 내역이나 지급 여부가 궁금하시면 먼저 소속 경로(커리어데이 담당자 또는 법인 담당자)로 확인해 주시고, 확인이 어려우시면 AX교육팀 담당자에게 말씀해 주세요.</div>
+    </div>
+    <div class="card">
+      <h3>업무 경비 (교통비·숙박비)</h3>
+      <p class="why">지방 출강 시 교통비·숙박비는 따로 요청하지 않으셔도, 아래 기준에 따라 사전 안내 후 정액으로 지급됩니다. 영수증 제출은 필요하지 않습니다.</p>
+      <div class="scroll">
+        <table>
+          <tr><th>지역</th><th>교통비 (왕복 1회 기준)</th><th>숙박비 (1일 기준)</th></tr>
+          <tr><td>수도권·경기도</td><td>지원 없음</td><td>지원 없음</td></tr>
+          <tr><td>수도권 내 대중교통 접근이 어려운 지역<br><span class="mono" style="font-size:13px">예: 용인시 기흥구·처인구</span></td><td>50,000원</td><td>지원 없음</td></tr>
+          <tr><td>충청도</td><td>50,000원</td><td>100,000원</td></tr>
+          <tr><td>강원도</td><td>100,000원</td><td>100,000원</td></tr>
+          <tr><td>경상도</td><td>120,000원</td><td>100,000원</td></tr>
+          <tr><td>전라도</td><td>120,000원</td><td>100,000원</td></tr>
+        </table>
+      </div>
+      <p style="margin-top:14px;font-size:14.5px;color:var(--muted)">※ 교통비는 교육 1건당 왕복 1회를 기준으로 지급됩니다.<br>※ 숙박이 제공되는 경우 교통비는 별도로 지급되지 않을 수 있습니다.<br>※ 실제 교육 장소와 이동 여건에 따라 지원 여부가 달라질 수 있으므로, 교육 배정 시 담당 매니저와 사전에 확인해 주세요.</p>
+      <div class="quote">위 기준을 확인해 보시고 궁금하신 사항이 있다면 담당자에게 문의해 주세요.</div>
+    </div>
+    <div class="card">
+      <h3>현장에서 문제가 생기면</h3>
+      <ul class="tick">
+        <li><strong>현장 이슈</strong> — 1차는 강사·튜터가 현장에서 협의해 처리하고, 해결되지 않으면 담당 매니저에게 바로 연락해 주세요. 긴급한 건은 전화도 괜찮습니다</li>
+        <li>고객사 담당자 연락처는 필요한 경우 <strong>회사가 먼저 오픈</strong>해 드립니다. 별도로 확보하지 않으셔도 됩니다</li>
+      </ul>
+    </div>
+  </section>
+  <!-- ============ 문의 ============ -->
+  <section id="contact">
+    <p class="sec-k">문의</p>
+    <h2>더 궁금하신 점이 있다면</h2>
+    <div class="contact-card">
+      <p>이 페이지를 읽어보시고 추가로 궁금하신 사항이 있으시면 편하게 DM 주세요. 배정·정산·경비 등 무엇이든 괜찮습니다.</p>
+      <a class="contact-btn" href="https://spartaaxedu.slack.com/team/U0BJBQYEWLC" target="_blank" rel="noopener">
+        @조양제에게 Slack DM 보내기 <span class="tag">SpartaAX_Tutor</span>
+      </a>
+    </div>
+  </section>
+  <footer>
+    팀스파르타 AX교육팀 · 이 페이지는 온보딩 이후에도 계속 열어두고 확인하실 수 있습니다.<br>
+    내용에 대한 문의는 위 Slack DM으로 편하게 남겨주세요.
+  </footer>
+</div>
+<script>
+/* ---- 역할 탭 ---- */
+(function(){
+  var tabs = document.querySelectorAll('.roles button');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){
+        t.setAttribute('aria-selected','false');
+        document.getElementById(t.getAttribute('aria-controls')).hidden = true;
+      });
+      tab.setAttribute('aria-selected','true');
+      document.getElementById(tab.getAttribute('aria-controls')).hidden = false;
+    });
+  });
+})();
+/* ---- 스크롤 스파이 ---- */
+(function(){
+  var links = document.querySelectorAll('nav.jump a');
+  var map = {};
+  links.forEach(function(a){
+    var el = document.querySelector(a.getAttribute('href'));
+    if(el) map[a.getAttribute('href').slice(1)] = a;
+  });
+  if(!('IntersectionObserver' in window)) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        links.forEach(function(a){a.classList.remove('on');});
+        if(map[e.target.id]) map[e.target.id].classList.add('on');
+      }
+    });
+  }, {rootMargin:'-20% 0px -70% 0px'});
+  document.querySelectorAll('section[id]').forEach(function(s){io.observe(s);});
+})();
+</script>
+</body>
+</html>
